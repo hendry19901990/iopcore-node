@@ -1,0 +1,18 @@
+{
+  "network": "livenet",
+  "port": 3001,
+  "services": [
+    "iopd",
+    "web",
+    "insight-api-iop",
+    "insight-ui-iop"
+  ],
+  "servicesConfig": {
+    "bitcoind": {
+      "spawn": {
+        "datadir": "/home/<youruser>/.IoP",
+        "exec": "/home/<youruser>/iop-core/src/iopd"
+      }
+    }
+  }
+}
