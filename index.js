@@ -6,7 +6,7 @@ module.exports.Service = require('./lib/service');
 module.exports.errors = require('./lib/errors');
 
 module.exports.services = {};
-module.exports.services.Bitcoin = require('./lib/services/bitcoind');
+module.exports.services.Iop = require('./lib/services/iopd');
 module.exports.services.Web = require('./lib/services/web');
 
 module.exports.scaffold = {};
@@ -21,7 +21,7 @@ module.exports.scaffold.defaultConfig = require('./lib/scaffold/default-config')
 module.exports.cli = {};
 module.exports.cli.main = require('./lib/cli/main');
 module.exports.cli.daemon = require('./lib/cli/daemon');
-module.exports.cli.bitcore = require('./lib/cli/bitcore');
-module.exports.cli.bitcored = require('./lib/cli/bitcored');
+module.exports.cli.iopcore = require('./lib/cli/iopcore');
+module.exports.cli.iopcored = require('./lib/cli/iopcored');
 
-module.exports.lib = require('bitcore-lib-dash');
+module.exports.lib = require('iopcore-lib');
