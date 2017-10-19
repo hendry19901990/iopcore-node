@@ -2,7 +2,7 @@
   "name": "iopcore-node",
   "description": "Full node with extended capabilities using Bitcore and IoP Core",
   "author": "IoP Community",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./index.js",
   "repository": "git://github.com/hendry19901990/iopcore-node.git",
   "homepage": "https://github.com/hendry19901990/iopcore-node",
