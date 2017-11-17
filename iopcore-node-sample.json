@@ -10,7 +10,7 @@
   "servicesConfig": {
     "bitcoind": {
       "spawn": {
-        "datadir": "/home/<youruser>/.IoP",
+        "datadir": "/home/<youruser>/iop-core/livenet",
         "exec": "/home/<youruser>/iop-core/src/iopd"
       }
     }
