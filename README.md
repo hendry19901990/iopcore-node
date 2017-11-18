@@ -53,7 +53,7 @@ Create user with read/write access:
 sync.js (located in scripts/) is used for updating the local databases. This script must be called from the explorers root directory.
 
 ```bash
-node scripts/sync.js
+node --stack-size=10000 scripts/sync.js
 ```	
 
 This will create a directory with configuration files for your node and install the necessary dependencies.
