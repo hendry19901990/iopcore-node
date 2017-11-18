@@ -15,7 +15,6 @@ To develop iopcore-node:
 ```bash
 cd ~
 git clone git@github.com:<yourusername>/iopcore-node.git
-git clone git@github.com:<yourusername>/iopcore-lib.git
 ```
 
 To develop iop-core or to compile from source:
@@ -46,11 +45,39 @@ brew install zeromq
 ## Install and Symlink
 
 ```bash
-cd iopcore-lib
-npm install
-cd ../iopcore-node
-npm install
+cd iopcore-node
+npm install --unsafe-perm=true --allow-root
+
 ```
+
+
+Create database
+
+Enter MongoDB cli:
+
+    $ mongo
+
+Create databse:
+
+    > use blockchaindb
+
+Create user with read/write access:
+
+    > db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+
+*note: If you're using mongo shell 2.4.x, use the following to create your user:
+
+    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"] })
+
+### Syncing databases with the blockchain
+
+sync.js (located in scripts/) is used for updating the local databases. This script must be called from the explorers root directory.
+
+```bash
+node scripts/sync.js
+```	
+
+
 **Note**: If you get a message about not being able to download IoP distribution, you'll need to compile iopd from source, and setup your configuration to use that version.
 
 
@@ -121,7 +148,7 @@ Edit `iopcore-node.json` with something similar to:
   "servicesConfig": {
     "iopd": {
       "spawn": {
-        "datadir": "/home/<youruser>/.IoP",
+        "datadir": "/home/<youruser>/.iop",
         "exec": "/home/<youruser>/iop-core/src/iopd"
       }
     }
@@ -141,7 +168,7 @@ ln -s ~/insight-api
 ln -s ~/insight-ui
 ```
 
-Make sure that the `<datadir>/IoP.conf` has the necessary settings, for example:
+Make sure that the `<datadir>/iop.conf` has the necessary settings, for example:
 ```
 server=1
 whitelist=127.0.0.1

@@ -5,7 +5,7 @@ set -e
 root_dir="${HOME}/iopcore"
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
-version="6.0.0b3"
+version="6.0.2"
 url="https://github.com/Internet-of-People/iop-core/releases/download/v6.0.0b3"
 
 if [ "${platform}" == "linux" ]; then

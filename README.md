@@ -6,13 +6,14 @@ A IoP full node for building applications and services with Node.js. A node is e
 ## Install
 
 ```bash
-npm install -g iopcore-node
+npm install -g iopcore-node --unsafe-perm=true --allow-root
 ```
 
 ## Prerequisites
 
 - IoP Core v6.0.0b3 with support for additional indexing *(see above)*
 - Node.js v0.10, v0.12, v4 or v5
+- mongodb 2.6.x
 - ZeroMQ *(libzmq3-dev for Ubuntu/Debian or zeromq on OSX)*
 - ~20GB of disk storage
 - ~1GB of RAM
@@ -28,6 +29,32 @@ iopcore-node install <service>
 iopcore-node install https://github.com/yourname/helloworld
 iopcore-node start
 ```
+
+Create database
+
+Enter MongoDB cli:
+
+    $ mongo
+
+Create databse:
+
+    > use blockchaindb
+
+Create user with read/write access:
+
+    > db.createUser( { user: "iquidus", pwd: "3xp!0reR", roles: [ "readWrite" ] } )
+
+*note: If you're using mongo shell 2.4.x, use the following to create your user:
+
+    > db.addUser( { user: "username", pwd: "password", roles: [ "readWrite"] })
+
+### Syncing databases with the blockchain
+
+sync.js (located in scripts/) is used for updating the local databases. This script must be called from the explorers root directory.
+
+```bash
+node scripts/sync.js
+```	
 
 This will create a directory with configuration files for your node and install the necessary dependencies.
 
