@@ -35,7 +35,7 @@
   ],
   "dependencies": {
     "async": "^1.3.0",
-    "iopd-rpc": "^0.1.1",
+    "iopd-rpc": "^0.1.2",
     "iopcore-lib": "^0.1.1",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
