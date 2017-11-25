@@ -5,8 +5,25 @@ A IoP full node for building applications and services with Node.js. A node is e
 
 ## Install
 
+### Install Dependencies
+
+For Ubuntu:
 ```bash
-npm install -g iopcore-node --unsafe-perm=true --allow-root
+sudo apt-get install libzmq3-dev
+sudo apt-get install build-essential
+```
+**Note**: Make sure that libzmq-dev is not installed, it should be removed when installing libzmq3-dev.
+
+
+For Mac OS X:
+```bash
+brew install zeromq
+```
+
+```bash
+git clone git@github.com:<yourusername>/iopcore-node.git
+cd iopcore-node
+npm install --unsafe-perm=true --allow-root
 ```
 
 ## Prerequisites
@@ -23,11 +40,11 @@ npm install -g iopcore-node --unsafe-perm=true --allow-root
 Iopcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your IoPcore Node.
 
 ```bash
-iopcore-node create -d <iop-data-dir> mynode
+iopcore-node.js create -d <iop-data-dir> mynode
 cd mynode
-iopcore-node install <service>
-iopcore-node install https://github.com/yourname/helloworld
-iopcore-node start
+../bin/iopcore-node.js install insight-api
+../bin/iopcore-node.js install insight-ui
+../bin/iopcore-node.js start
 ```
 
 Create database
@@ -53,7 +70,7 @@ Create user with read/write access:
 sync.js (located in scripts/) is used for updating the local databases. This script must be called from the explorers root directory.
 
 ```bash
-node --stack-size=10000 scripts/sync.js
+node sync.js
 ```	
 
 This will create a directory with configuration files for your node and install the necessary dependencies.
@@ -64,7 +81,7 @@ For more information about (and developing) services, please see the [Service Do
 
 ## Add-on Services
 
-There are several add-on services available to extend the functionality of Bitcore:
+There are several add-on services available to extend the functionality of IoPcore:
 
 - [Insight API](https://github.com/hendry19901990/insight-api/tree/master)
 - [Insight UI](https://github.com/hendry19901990/insight-ui/tree/master)
