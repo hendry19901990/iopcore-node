@@ -20,11 +20,7 @@ For Mac OS X:
 brew install zeromq
 ```
 
-```bash
-git clone git@github.com:<yourusername>/iopcore-node.git
-cd iopcore-node
-npm install --unsafe-perm=true --allow-root
-```
+
 
 ## Prerequisites
 
@@ -38,6 +34,13 @@ npm install --unsafe-perm=true --allow-root
 ## Configuration
 
 Iopcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your IoPcore Node.
+
+
+```bash
+git clone git@github.com:<yourusername>/iopcore-node.git
+cd iopcore-node
+npm install --unsafe-perm=true --allow-root
+```
 
 ```bash
 iopcore-node.js create -d <iop-data-dir> mynode
