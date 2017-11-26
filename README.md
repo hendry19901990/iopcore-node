@@ -43,7 +43,7 @@ npm install --unsafe-perm=true --allow-root
 ```
 
 ```bash
-iopcore-node.js create -d <iop-data-dir> mynode
+bin/iopcore-node.js create -d <iop-data-dir> mynode
 cd mynode
 ../bin/iopcore-node.js install insight-api
 ../bin/iopcore-node.js install insight-ui
@@ -86,8 +86,9 @@ For more information about (and developing) services, please see the [Service Do
 
 There are several add-on services available to extend the functionality of IoPcore:
 
-- [Insight API](https://github.com/hendry19901990/insight-api/tree/master)
-- [Insight UI](https://github.com/hendry19901990/insight-ui/tree/master)
+- [Insight API](https://github.com/hendry19901990/insight-api-iop/tree/master)
+- [Insight UI Mainnet](https://github.com/hendry19901990/insight-ui-iop/tree/master)
+- [Insight UI Testnet](https://github.com/hendry19901990/insight-ui-iop/tree/testnet)
 
   
 ## License
