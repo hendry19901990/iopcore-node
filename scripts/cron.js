@@ -1,13 +1,15 @@
 const exec   = require('child_process').exec;
 
 function execute(){
-  exec('node sync.js', (error, stdout, stderr) => { 
-    if (error !== null) 
-      console.log(error);
-        
-	if (stdout)
-	  console.log(stdout);
-  });
+ try{
+    exec('node sync.js', (error, stdout, stderr) => { 
+      if (error !== null) 
+        console.log(error);
+
+	  if (stdout)
+	    console.log(stdout);
+    });
+  }catch(e){}
   setTimeout(execute, 30000);
 }
 
